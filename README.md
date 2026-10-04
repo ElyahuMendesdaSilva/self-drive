@@ -89,6 +89,16 @@ npx eas-cli build --profile production --platform all
 
 O perfil `preview` gera um APK para distribuição interna no Android. O perfil `production` usa as configurações de distribuição de produção do EAS.
 
+### Atualizações OTA
+
+O app verifica atualizações EAS ao iniciar e também permite verificá-las manualmente em **Configurações → Atualizações do app**. Para publicar uma atualização de JavaScript ou assets no canal de produção:
+
+```bash
+npx eas-cli@latest update --channel production --message "Descreva a atualização"
+```
+
+Para distribuir no canal de testes, use `--channel preview`. Builds existentes precisam ser substituídas por uma nova build que inclua `expo-updates` antes de receber atualizações OTA. Mudanças em módulos nativos, plugins ou configuração nativa também exigem uma nova build; OTA cobre apenas JavaScript e assets compatíveis com o runtime instalado.
+
 ## Tecnologias
 
 - React Native 0.86

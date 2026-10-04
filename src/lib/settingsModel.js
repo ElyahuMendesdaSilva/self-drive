@@ -193,10 +193,20 @@ const build = (group, role) =>
 const userTopics = build(raw.usuario_normal, "user");
 const adminTopics = build(raw.administrador, "admin");
 const allTopics = [...userTopics, ...adminTopics];
+const appUpdatesTopic = {
+  id: "atualizacoes_app",
+  role: "user",
+  title: "Atualizações do app",
+  icon: "cloud-download-outline",
+  description: "Verificar atualizações do Self Drive",
+  screen: "updates",
+  notices: [],
+  sections: [],
+};
 
 /** Tópicos do usuário comum + (se for admin) os exclusivos do administrador. */
 export function getTopicGroups(isAdmin) {
-  return { user: userTopics, admin: isAdmin ? adminTopics : [] };
+  return { user: [...userTopics, appUpdatesTopic], admin: isAdmin ? adminTopics : [] };
 }
 
 /** Procura um tópico respeitando o perfil (usuário comum não acessa tópicos de admin). */

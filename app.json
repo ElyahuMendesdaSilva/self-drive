@@ -6,6 +6,13 @@
     "description": "App para gerenciamento de arquivos self host com filebrowser",
     "userInterfaceStyle": "automatic",
     "version": "1.0.0",
+    "runtimeVersion": {
+      "policy": "fingerprint"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/d04cb5b1-e7d2-4b51-9031-0afd72e9429e",
+      "checkAutomatically": "ON_LOAD"
+    },
     "orientation": "default",
     "icon": "./assets/icon.png",
     "ios": {
@@ -37,6 +44,7 @@
     },
     "plugins": [
       "expo-router",
+      "expo-updates",
       "expo-status-bar",
       "expo-secure-store",
       [

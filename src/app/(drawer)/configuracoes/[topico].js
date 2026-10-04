@@ -13,6 +13,7 @@ import SecurityScreen from "../../../components/settings/screens/SecurityScreen"
 import SharesScreen from "../../../components/settings/screens/SharesScreen";
 import SystemScreen from "../../../components/settings/screens/SystemScreen";
 import TokensScreen from "../../../components/settings/screens/TokensScreen";
+import UpdatesScreen from "../../../components/settings/screens/UpdatesScreen";
 import UsersScreen from "../../../components/settings/screens/UsersScreen";
 import SettingsHeader from "../../../components/settings/SettingsHeader";
 import { useColors, useStyles } from "../../../lib/theme";
@@ -31,6 +32,7 @@ const SCREENS = {
   users: UsersScreen,
   access: AccessScreen,
   groups: GroupsScreen,
+  updates: UpdatesScreen,
 };
 
 function Notice({ text }) {
