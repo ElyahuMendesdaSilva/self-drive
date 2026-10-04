@@ -2,7 +2,7 @@
 
 Aplicativo móvel para acessar e gerenciar arquivos em um servidor próprio compatível com a API do **File Browser Quantum**. O Self Drive oferece navegação de arquivos em uma interface feita com React Native e Expo.
 
-> **Dependência essencial:** o Self Drive precisa de um servidor de API compatível para funcionar. O repositório da versão modificada da API será vinculado aqui quando estiver pronto: **[Repositório da API — adicionar link]**.
+> **Dependência essencial:** o Self Drive precisa de um servidor de API compatível para funcionar. Use a [API do Self Drive, baseada no File Browser Quantum](https://github.com/ElyahuMendesdaSilva/filebrowser-quantum-self-drive/tree/self-drive-api).
 
 ## Funcionalidades
 
@@ -28,13 +28,11 @@ Algumas opções dependem dos recursos e das permissões habilitados no servidor
 
 ### Servidor de API
 
-O app depende do servidor de API para autenticação, listagem e gerenciamento dos arquivos. A versão modificada usada por este projeto será publicada em um repositório separado:
+O app depende do servidor de API para autenticação, listagem e gerenciamento dos arquivos. O código da versão modificada está em um repositório separado:
 
-- **Código-fonte:** 
+- **Código-fonte:** [filebrowser-quantum-self-drive — branch `self-drive-api`](https://github.com/ElyahuMendesdaSilva/filebrowser-quantum-self-drive/tree/self-drive-api)
 - **Instalação e configuração:** consulte o README desse repositório.
 - **Compatibilidade:** use uma versão da API compatível com a versão do Self Drive deste repositório.
-
-> Antes de publicar a API, substitua os marcadores acima pelo link definitivo e informe a versão compatível recomendada.
 
 ## Configuração e execução
 
