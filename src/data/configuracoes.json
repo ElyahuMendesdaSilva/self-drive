@@ -388,7 +388,7 @@
       },
       {
         "id": "padroes_usuario",
-        "titulo": "Configurações padrão e política obrigatória de usuários",
+        "titulo": "Configurações de usuários",
         "origem": "Gerenciamento de usuários > Configurações padrão do usuário",
         "descricao": "Valores aplicados a novos usuários. Cada campo pode ser marcado como 'Aplicar' (enforce) para impor o valor a todos os não administradores.",
         "preferencias": [
@@ -540,7 +540,7 @@
       },
       {
         "id": "acesso",
-        "titulo": "Acesso (regras por fonte e caminho)",
+        "titulo": "Acesso (regras)",
         "origem": "Gerenciamento de usuários > Acesso",
         "itens": [
           {
