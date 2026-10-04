@@ -1,5 +1,6 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Constants from "expo-constants";
+import * as Linking from "expo-linking";
 import * as ImagePicker from "expo-image-picker";
 import { router } from "expo-router";
 import { useEffect, useState } from "react";
@@ -59,6 +60,9 @@ function AvatarFallback() {
   );
 }
 
+const REPOSITORY_URL = "https://github.com/ElyahuMendesdaSilva/self-drive";
+const LICENSE_URL = `${REPOSITORY_URL}/blob/main/LICENSE`;
+
 export default function AccountModal({ visible, onClose, avatar }) {
   const colors = useColors();
   const styles = useStyles(createStyles);
@@ -105,6 +109,12 @@ export default function AccountModal({ visible, onClose, avatar }) {
   const logout = async () => {
     onClose();
     await signOut();
+  };
+  const openExternal = (url) => {
+    onClose();
+    Linking.openURL(url).catch(() =>
+      Alert.alert("Não foi possível abrir o link", "Tente novamente mais tarde."),
+    );
   };
   const changeAvatar = async () => {
     if (avatarBusy) return;
@@ -257,9 +267,21 @@ export default function AccountModal({ visible, onClose, avatar }) {
             </View>
 
             <View style={styles.footer}>
-              <Text style={styles.footerText}>GitHub</Text>
+              <Pressable
+                accessibilityRole="link"
+                onPress={() => openExternal(REPOSITORY_URL)}
+                hitSlop={8}
+              >
+                <Text style={styles.footerText}>GitHub</Text>
+              </Pressable>
               <Text style={styles.footerDot}>•</Text>
-              <Text style={styles.footerText}>Licenças</Text>
+              <Pressable
+                accessibilityRole="link"
+                onPress={() => openExternal(LICENSE_URL)}
+                hitSlop={8}
+              >
+                <Text style={styles.footerText}>Licenças</Text>
+              </Pressable>
             </View>
           </ScrollView>
         </View>
