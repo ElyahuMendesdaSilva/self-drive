@@ -1,0 +1,30 @@
+{
+  "brand": "Self-Drive",
+  "tagline": "Seus arquivos. Seu espaço.",
+  "brief": "Aplicativo móvel para acessar e organizar arquivos em servidor próprio, com foco em autonomia, clareza e confiança.",
+  "adjectives": ["pessoal", "organizado", "confiável"],
+  "industry": "software",
+  "mockups": ["app-icon", "website", "favicon-tab", "readme", "terminal", "social"],
+  "brand_color": "#20C9A5",
+  "tile_color": "#123047",
+  "greyscale": false,
+  "final": true,
+  "concepts": [
+    {
+      "name": "Núcleo próprio",
+      "symbol": "self-drive-symbol.svg",
+      "lockup": "lockups/self-drive-horizontal.svg",
+      "stacked": "lockups/self-drive-stacked.svg",
+      "avatar": "exports/self-drive-symbol-square.svg",
+      "symbol_on_tile": "self-drive-symbol-on-dark.svg",
+      "symbol_on_dark": "self-drive-symbol-on-dark.svg",
+      "idea": "Hexágonos concêntricos formam um núcleo que representa seus arquivos sob seu próprio controle.",
+      "rationale": [
+        "A geometria dá sensação de estrutura e estabilidade sem recorrer a uma nuvem literal.",
+        "O núcleo verde menta cria um ponto de reconhecimento em tamanhos pequenos.",
+        "O sinal de adição sugere organização e expansão do espaço pessoal."
+      ]
+    }
+  ],
+  "recommendation": "O símbolo compacto e a paleta azul profundo + menta formam uma assinatura legível para o app e para interfaces web."
+}

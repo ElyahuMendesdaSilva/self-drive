@@ -1,0 +1,775 @@
+{
+  "_meta": {
+    "projeto": "FileBrowser Quantum (frontend)",
+    "fonte": "frontend/src/views/Settings.vue, views/settings/*, components/settings/*, components/prompts/*, utils/constants.js",
+    "nota": "Itens com 'condicao' só aparecem quando a condição é atendida. 'campo' é o nome do atributo usado no frontend.",
+    "limitrofes": "'Mostrar arquivos ocultos' e 'Preferir editor para Markdown' foram mantidos por alterarem o que é exibido/aberto, não só a aparência."
+  },
+  "usuario_normal": {
+    "descricao": "Configurações que qualquer usuário autenticado pode alterar na tela de configurações.",
+    "topicos": [
+      {
+        "id": "preferencias_arquivos",
+        "titulo": "Preferências de arquivos",
+        "origem": "Configurações do perfil",
+        "itens": [
+          {
+            "id": "showHidden",
+            "rotulo": "Mostrar arquivos ocultos",
+            "tipo": "toggle",
+            "descricao": "Mostra na listagem arquivos ocultos (ex.: .thumbnails); continuam acessíveis manualmente se indexados.",
+            "campo": "listing.showHidden"
+          },
+          {
+            "id": "deleteWithoutConfirming",
+            "rotulo": "Excluir arquivos sem prompt de confirmação",
+            "tipo": "toggle",
+            "campo": "listing.deleteWithoutConfirming",
+            "condicao": "Requer 'Mostrar configurações avançadas do perfil' ativo"
+          },
+          {
+            "id": "deleteAfterArchive",
+            "rotulo": "Excluir arquivos de origem após criação/extração de arquivos compactados",
+            "tipo": "toggle",
+            "campo": "listing.deleteAfterArchive",
+            "condicao": "Requer 'Mostrar configurações avançadas do perfil' ativo"
+          },
+          {
+            "id": "newFileTemplate",
+            "rotulo": "Modelo de novo arquivo",
+            "tipo": "lista de nomes de arquivo",
+            "descricao": "Nomes usados como modelo para criar novos arquivos pelo menu de contexto.",
+            "campo": "listing.newFileTemplate",
+            "condicao": "Requer 'Mostrar configurações avançadas do perfil' ativo"
+          }
+        ]
+      },
+      {
+        "id": "preferencias_visualizador",
+        "titulo": "Visualizar e editar arquivos",
+        "origem": "Configurações do perfil",
+        "itens": [
+          {
+            "id": "autoplayMedia",
+            "rotulo": "Reprodução automática de mídia durante a visualização",
+            "tipo": "toggle",
+            "campo": "fileViewer.autoplayMedia",
+            "condicao": "Requer 'Mostrar configurações avançadas do perfil' ativo"
+          },
+          {
+            "id": "preferEditorForMarkdown",
+            "rotulo": "Preferir editor primeiro para arquivos Markdown",
+            "tipo": "toggle",
+            "campo": "fileViewer.preferEditorForMarkdown",
+            "condicao": "Requer 'Mostrar configurações avançadas do perfil' ativo"
+          },
+          {
+            "id": "disableViewingExt",
+            "rotulo": "Desativar o visualizador/editor para determinadas extensões",
+            "tipo": "texto (extensões separadas por espaço, ex.: .txt .pdf)",
+            "campo": "fileViewer.disableViewingExt",
+            "condicao": "Requer 'Mostrar configurações avançadas do perfil' ativo"
+          },
+          {
+            "id": "disableOnlyOfficeExt",
+            "rotulo": "Desativar o visualizador do Office (OnlyOffice) para determinadas extensões",
+            "tipo": "texto (extensões ou '*')",
+            "campo": "fileViewer.disableOnlyOfficeExt",
+            "condicao": "Requer 'Mostrar configurações avançadas do perfil' ativo e OnlyOffice configurado no servidor"
+          },
+          {
+            "id": "debugOffice",
+            "rotulo": "Ativar o modo de depuração do OnlyOffice",
+            "tipo": "toggle",
+            "campo": "fileViewer.debugOffice",
+            "condicao": "Requer 'Mostrar configurações avançadas do perfil' ativo"
+          }
+        ]
+      },
+      {
+        "id": "carregamento_arquivos",
+        "titulo": "Carregamento de arquivos",
+        "origem": "Carregamento de arquivos",
+        "itens": [
+          {
+            "id": "maxConcurrentUpload",
+            "rotulo": "Máximo de uploads simultâneos",
+            "tipo": "slider (1 a 10)",
+            "campo": "fileLoading.maxConcurrentUpload"
+          },
+          {
+            "id": "uploadChunkSizeMb",
+            "rotulo": "Tamanho do bloco de upload em MB",
+            "tipo": "número (mín. 0)",
+            "campo": "fileLoading.uploadChunkSizeMb"
+          },
+          {
+            "id": "downloadChunkSizeMb",
+            "rotulo": "Tamanho do bloco de download em MB",
+            "tipo": "número (mín. 0)",
+            "campo": "fileLoading.downloadChunkSizeMb"
+          },
+          {
+            "id": "clearAll",
+            "rotulo": "'Limpar concluídos' também remove erros, pausas e conflitos",
+            "tipo": "toggle",
+            "campo": "fileLoading.clearAll"
+          }
+        ]
+      },
+      {
+        "id": "notificacoes",
+        "titulo": "Notificações",
+        "origem": "Notificações",
+        "itens": [
+          {
+            "id": "appNotificationsEnabled",
+            "rotulo": "Notificações de aplicativos (navegador)",
+            "tipo": "toggle",
+            "descricao": "Avisa quando operações com arquivos terminam com a aba em segundo plano. Exige permissão do navegador e fica salvo apenas neste navegador.",
+            "condicao": "Navegador com suporte a notificações"
+          }
+        ]
+      },
+      {
+        "id": "seguranca_conta",
+        "titulo": "Segurança da própria conta",
+        "origem": "Gerenciamento de usuários (editar o próprio usuário)",
+        "itens": [
+          {
+            "id": "password",
+            "rotulo": "Alterar senha",
+            "tipo": "senha + confirmação",
+            "condicao": "Login por senha habilitado no servidor e método de login do usuário = senha; o administrador pode bloquear a alteração (lockPassword)"
+          },
+          {
+            "id": "otpEnabled",
+            "rotulo": "Autenticação de dois fatores (2FA)",
+            "tipo": "toggle",
+            "condicao": "Mesma condição da senha"
+          },
+          {
+            "id": "generateOtp",
+            "rotulo": "Gerar novo código OTP",
+            "tipo": "ação",
+            "condicao": "2FA ativado"
+          },
+          {
+            "id": "passkeys",
+            "rotulo": "Chaves de acesso (passkeys)",
+            "tipo": "lista com adicionar/excluir",
+            "condicao": "Passkeys disponíveis no servidor"
+          }
+        ]
+      },
+      {
+        "id": "compartilhamentos",
+        "titulo": "Compartilhamentos (próprios)",
+        "origem": "Compartilhar configurações",
+        "condicao": "Usuário com permissão 'Compartilhar arquivos' (permissions.share)",
+        "acoes_na_tabela": [
+          "editar",
+          "excluir",
+          "copiar link do compartilhamento",
+          "copiar link de download"
+        ],
+        "opcoes_de_cada_compartilhamento": [
+          {
+            "id": "shareType",
+            "rotulo": "Tipo de compartilhamento",
+            "tipo": "seleção",
+            "descricao": "Normal (visualizar/baixar) ou Upload (receber arquivos)."
+          },
+          {
+            "id": "allowModify",
+            "rotulo": "Permitir a edição de arquivos",
+            "tipo": "toggle"
+          },
+          {
+            "id": "allowCreate",
+            "rotulo": "Permitir a criação e o upload de arquivos e pastas",
+            "tipo": "toggle"
+          },
+          {
+            "id": "allowDelete",
+            "rotulo": "Permitir a exclusão de arquivos",
+            "tipo": "toggle"
+          },
+          {
+            "id": "allowReplacements",
+            "rotulo": "Permitir substituições de arquivos",
+            "tipo": "toggle"
+          },
+          {
+            "id": "disableDownload",
+            "rotulo": "Desativar o download de arquivos",
+            "tipo": "toggle"
+          },
+          {
+            "id": "disableFileViewer",
+            "rotulo": "Desativar o visualizador de arquivos",
+            "tipo": "toggle"
+          },
+          {
+            "id": "disableAnonymous",
+            "rotulo": "Desativar o acesso anônimo",
+            "tipo": "toggle",
+            "descricao": "Somente usuários autenticados com acesso à origem podem abrir o share."
+          },
+          {
+            "id": "allowedUsernames",
+            "rotulo": "Compartilhar apenas com determinados usuários",
+            "tipo": "toggle + lista de usuários"
+          },
+          {
+            "id": "enableOnlyOffice",
+            "rotulo": "Ativar o visualizador do OnlyOffice",
+            "tipo": "toggle"
+          },
+          {
+            "id": "keepAfterExpiration",
+            "rotulo": "Não excluir o compartilhamento após expirar",
+            "tipo": "toggle"
+          },
+          {
+            "id": "showHidden",
+            "rotulo": "Mostrar arquivos ocultos",
+            "tipo": "toggle"
+          },
+          {
+            "id": "perUserDownloadLimit",
+            "rotulo": "Aplicar o limite de downloads a cada usuário",
+            "tipo": "toggle"
+          },
+          {
+            "id": "extractEmbeddedSubtitles",
+            "rotulo": "Extrair legendas incorporadas",
+            "tipo": "toggle"
+          },
+          {
+            "id": "downloadsLimit",
+            "rotulo": "Limite de número de downloads",
+            "tipo": "número"
+          },
+          {
+            "id": "maxBandwidth",
+            "rotulo": "Largura de banda máxima de download (kbps)",
+            "tipo": "número"
+          },
+          {
+            "id": "shareQuota",
+            "rotulo": "Limitar o espaço de armazenamento neste compartilhamento",
+            "tipo": "toggle + medição + limite (valor/unidade)"
+          }
+        ]
+      },
+      {
+        "id": "tokens_api",
+        "titulo": "Tokens de API",
+        "origem": "Tokens de API",
+        "condicao": "Usuário com permissão de API (permissions.api)",
+        "itens": [
+          {
+            "id": "name",
+            "rotulo": "Nome do token",
+            "tipo": "texto"
+          },
+          {
+            "id": "duration",
+            "rotulo": "Duração do token",
+            "tipo": "número + unidade"
+          },
+          {
+            "id": "customizeToken",
+            "rotulo": "Personalizar o token (restringir permissões)",
+            "tipo": "toggle",
+            "descricao": "Quando ativo, permite escolher quais permissões o token terá; só é possível marcar permissões que o próprio usuário possui."
+          }
+        ]
+      }
+    ]
+  },
+  "administrador": {
+    "descricao": "Configurações exclusivas do administrador (além de tudo o que o usuário normal já pode configurar).",
+    "inclui_tudo_do_usuario_normal": true,
+    "topicos": [
+      {
+        "id": "usuarios",
+        "titulo": "Gerenciamento de usuários",
+        "origem": "Gerenciamento de usuários",
+        "acoes": [
+          "criar usuário",
+          "editar usuário",
+          "excluir usuário"
+        ],
+        "itens": [
+          {
+            "id": "username",
+            "rotulo": "Nome de usuário",
+            "tipo": "texto",
+            "condicao": "Apenas na criação"
+          },
+          {
+            "id": "password",
+            "rotulo": "Senha do usuário",
+            "tipo": "senha + confirmação",
+            "condicao": "Método de login = senha"
+          },
+          {
+            "id": "otpEnabled",
+            "rotulo": "Autenticação de dois fatores do usuário",
+            "tipo": "toggle"
+          },
+          {
+            "id": "passkeys",
+            "rotulo": "Chaves de acesso do usuário",
+            "tipo": "lista com adicionar/excluir"
+          },
+          {
+            "id": "loginMethod",
+            "rotulo": "Método de login",
+            "tipo": "seleção"
+          },
+          {
+            "id": "scopes",
+            "rotulo": "Fontes permitidas e escopo (caminho) do usuário em cada fonte",
+            "tipo": "seleção múltipla de fontes + caminho"
+          },
+          {
+            "id": "scopePermissions",
+            "rotulo": "Permissões por fonte: visualizar, baixar, modificar, criar, excluir",
+            "tipo": "5 toggles por fonte"
+          },
+          {
+            "id": "scopeQuota",
+            "rotulo": "Limite de armazenamento por fonte",
+            "tipo": "toggle + medição de uso + limite (valor/unidade)"
+          },
+          {
+            "id": "groups",
+            "rotulo": "Grupos do usuário",
+            "tipo": "lista (adicionar/remover)"
+          },
+          {
+            "id": "userPreferences",
+            "rotulo": "Preferências do usuário (mesmos itens funcionais do perfil)",
+            "tipo": "formulário"
+          },
+          {
+            "id": "userToolAccess",
+            "rotulo": "Acesso às ferramentas do usuário",
+            "tipo": "toggle por ferramenta"
+          },
+          {
+            "id": "lockPassword",
+            "rotulo": "Não permitir que o usuário altere a senha",
+            "tipo": "toggle",
+            "campo": "account.lockPassword"
+          },
+          {
+            "id": "disableSettings",
+            "rotulo": "Desativar a página de configurações do usuário",
+            "tipo": "toggle",
+            "campo": "account.disableSettings"
+          },
+          {
+            "id": "disableUpdateNotifications",
+            "rotulo": "Desativar o banner de notificação de atualização",
+            "tipo": "toggle",
+            "campo": "account.disableUpdateNotifications"
+          },
+          {
+            "id": "permissions",
+            "rotulo": "Permissões globais: Administrador, Compartilhar arquivos, Tokens de API, Conexões em tempo real",
+            "tipo": "4 toggles",
+            "campo": "account.permissions"
+          }
+        ]
+      },
+      {
+        "id": "padroes_usuario",
+        "titulo": "Configurações padrão e política obrigatória de usuários",
+        "origem": "Gerenciamento de usuários > Configurações padrão do usuário",
+        "descricao": "Valores aplicados a novos usuários. Cada campo pode ser marcado como 'Aplicar' (enforce) para impor o valor a todos os não administradores.",
+        "preferencias": [
+          {
+            "id": "showHidden",
+            "rotulo": "Mostrar arquivos ocultos",
+            "tipo": "toggle",
+            "descricao": "Mostra na listagem arquivos ocultos (ex.: .thumbnails); continuam acessíveis manualmente se indexados.",
+            "campo": "listing.showHidden",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "deleteWithoutConfirming",
+            "rotulo": "Excluir arquivos sem prompt de confirmação",
+            "tipo": "toggle",
+            "campo": "listing.deleteWithoutConfirming",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "deleteAfterArchive",
+            "rotulo": "Excluir arquivos de origem após criação/extração de arquivos compactados",
+            "tipo": "toggle",
+            "campo": "listing.deleteAfterArchive",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "newFileTemplate",
+            "rotulo": "Modelo de novo arquivo",
+            "tipo": "lista de nomes de arquivo",
+            "descricao": "Nomes usados como modelo para criar novos arquivos pelo menu de contexto.",
+            "campo": "listing.newFileTemplate",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "autoplayMedia",
+            "rotulo": "Reprodução automática de mídia durante a visualização",
+            "tipo": "toggle",
+            "campo": "fileViewer.autoplayMedia",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "preferEditorForMarkdown",
+            "rotulo": "Preferir editor primeiro para arquivos Markdown",
+            "tipo": "toggle",
+            "campo": "fileViewer.preferEditorForMarkdown",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "disableViewingExt",
+            "rotulo": "Desativar o visualizador/editor para determinadas extensões",
+            "tipo": "texto (extensões separadas por espaço, ex.: .txt .pdf)",
+            "campo": "fileViewer.disableViewingExt",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "disableOnlyOfficeExt",
+            "rotulo": "Desativar o visualizador do Office (OnlyOffice) para determinadas extensões",
+            "tipo": "texto (extensões ou '*')",
+            "campo": "fileViewer.disableOnlyOfficeExt",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "debugOffice",
+            "rotulo": "Ativar o modo de depuração do OnlyOffice",
+            "tipo": "toggle",
+            "campo": "fileViewer.debugOffice",
+            "aplicavel_como_politica": true
+          }
+        ],
+        "conta": [
+          {
+            "id": "lockPassword",
+            "rotulo": "Não permitir que o usuário altere a senha",
+            "tipo": "toggle",
+            "campo": "account.lockPassword",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "disableSettings",
+            "rotulo": "Desativar a página de configurações do usuário",
+            "tipo": "toggle",
+            "campo": "account.disableSettings",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "disableUpdateNotifications",
+            "rotulo": "Desativar a notificação de atualização",
+            "tipo": "toggle",
+            "campo": "account.disableUpdateNotifications",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "permissions.admin",
+            "rotulo": "Administrador",
+            "tipo": "toggle",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "permissions.share",
+            "rotulo": "Compartilhar arquivos",
+            "tipo": "toggle",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "permissions.api",
+            "rotulo": "Criar e gerenciar tokens de API de longa duração",
+            "tipo": "toggle",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "permissions.realtime",
+            "rotulo": "Permitir conexões e atualizações em tempo real",
+            "tipo": "toggle",
+            "aplicavel_como_politica": true
+          }
+        ]
+      },
+      {
+        "id": "padroes_ferramentas",
+        "titulo": "Acesso padrão às ferramentas",
+        "origem": "Gerenciamento de usuários > Configurações padrão de acesso às ferramentas",
+        "itens": [
+          {
+            "id": "sizeViewer",
+            "rotulo": "Analisador de tamanho de arquivo",
+            "tipo": "toggle (habilitar / aplicar)"
+          },
+          {
+            "id": "duplicateFinder",
+            "rotulo": "Localizador de arquivos duplicados",
+            "tipo": "toggle (habilitar / aplicar)"
+          },
+          {
+            "id": "advancedSearch",
+            "rotulo": "Pesquisa avançada",
+            "tipo": "toggle (habilitar / aplicar)"
+          },
+          {
+            "id": "fileWatcher",
+            "rotulo": "Observador de arquivos",
+            "tipo": "toggle (habilitar / aplicar)"
+          },
+          {
+            "id": "activityViewer",
+            "rotulo": "Visualizador de atividades",
+            "tipo": "toggle (habilitar / aplicar)"
+          }
+        ]
+      },
+      {
+        "id": "acesso",
+        "titulo": "Acesso (regras por fonte e caminho)",
+        "origem": "Gerenciamento de usuários > Acesso",
+        "itens": [
+          {
+            "id": "source",
+            "rotulo": "Fonte selecionada",
+            "tipo": "seleção"
+          },
+          {
+            "id": "sourceDefaultPermissions",
+            "rotulo": "Permissões padrão da fonte: visualizar, baixar, modificar, criar, excluir",
+            "tipo": "5 toggles, cada um com opção 'Aplicar' para não administradores"
+          },
+          {
+            "id": "rulePath",
+            "rotulo": "Caminho da regra",
+            "tipo": "seletor de caminho/fonte"
+          },
+          {
+            "id": "ruleEntries",
+            "rotulo": "Entradas da regra: usuário, grupo ou todos × permitir/negar",
+            "tipo": "lista"
+          },
+          {
+            "id": "defaultBehavior",
+            "rotulo": "Ação padrão do caminho (permitir/negar)",
+            "tipo": "indicador/configuração da regra"
+          },
+          {
+            "id": "cascadeDelete",
+            "rotulo": "Exclusão recursiva das regras filhas",
+            "tipo": "toggle"
+          },
+          {
+            "id": "reassignPath",
+            "rotulo": "Reatribuir caminho inexistente",
+            "tipo": "ação"
+          }
+        ]
+      },
+      {
+        "id": "grupos",
+        "titulo": "Grupos",
+        "origem": "Gerenciamento de usuários > Grupos",
+        "acoes": [
+          "criar grupo",
+          "editar grupo",
+          "excluir grupo"
+        ],
+        "itens": [
+          {
+            "id": "groupName",
+            "rotulo": "Nome do grupo",
+            "tipo": "texto",
+            "condicao": "Apenas na criação"
+          },
+          {
+            "id": "members",
+            "rotulo": "Membros do grupo",
+            "tipo": "lista de usuários (adicionar/remover)"
+          }
+        ],
+        "observacao": "Em logins via OIDC os grupos podem ser sincronizados automaticamente."
+      },
+      {
+        "id": "compartilhamentos_admin",
+        "titulo": "Padrões e política de compartilhamentos",
+        "origem": "Compartilhar configurações > Compartilhar configurações padrão",
+        "descricao": "Valores padrão para novos compartilhamentos; cada campo pode ser imposto a usuários não administradores ('Aplicar').",
+        "itens": [
+          {
+            "id": "shareType",
+            "rotulo": "Tipo de compartilhamento",
+            "tipo": "seleção",
+            "descricao": "Normal (visualizar/baixar) ou Upload (receber arquivos).",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "allowModify",
+            "rotulo": "Permitir a edição de arquivos",
+            "tipo": "toggle",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "allowCreate",
+            "rotulo": "Permitir a criação e o upload de arquivos e pastas",
+            "tipo": "toggle",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "allowDelete",
+            "rotulo": "Permitir a exclusão de arquivos",
+            "tipo": "toggle",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "allowReplacements",
+            "rotulo": "Permitir substituições de arquivos",
+            "tipo": "toggle",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "disableDownload",
+            "rotulo": "Desativar o download de arquivos",
+            "tipo": "toggle",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "disableFileViewer",
+            "rotulo": "Desativar o visualizador de arquivos",
+            "tipo": "toggle",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "disableAnonymous",
+            "rotulo": "Desativar o acesso anônimo",
+            "tipo": "toggle",
+            "descricao": "Somente usuários autenticados com acesso à origem podem abrir o share.",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "allowedUsernames",
+            "rotulo": "Compartilhar apenas com determinados usuários",
+            "tipo": "toggle + lista de usuários",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "enableOnlyOffice",
+            "rotulo": "Ativar o visualizador do OnlyOffice",
+            "tipo": "toggle",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "keepAfterExpiration",
+            "rotulo": "Não excluir o compartilhamento após expirar",
+            "tipo": "toggle",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "showHidden",
+            "rotulo": "Mostrar arquivos ocultos",
+            "tipo": "toggle",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "perUserDownloadLimit",
+            "rotulo": "Aplicar o limite de downloads a cada usuário",
+            "tipo": "toggle",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "extractEmbeddedSubtitles",
+            "rotulo": "Extrair legendas incorporadas",
+            "tipo": "toggle",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "downloadsLimit",
+            "rotulo": "Limite de número de downloads",
+            "tipo": "número",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "maxBandwidth",
+            "rotulo": "Largura de banda máxima de download (kbps)",
+            "tipo": "número",
+            "aplicavel_como_politica": true
+          },
+          {
+            "id": "shareQuota",
+            "rotulo": "Limitar o espaço de armazenamento neste compartilhamento",
+            "tipo": "toggle + medição + limite (valor/unidade)",
+            "aplicavel_como_politica": true
+          }
+        ]
+      },
+      {
+        "id": "sistema",
+        "titulo": "Sistema e administração",
+        "origem": "Sistema e administração",
+        "itens": [
+          {
+            "id": "disableUpdateNotifications",
+            "rotulo": "Desativar a exibição da notificação de atualização",
+            "tipo": "toggle",
+            "descricao": "Banner de atualização exibido aos administradores na barra lateral."
+          },
+          {
+            "id": "analyticsEnabled",
+            "rotulo": "Enviar análises de implantação (anônimas)",
+            "tipo": "toggle",
+            "condicao": "Servidor com suporte a publicação de análises"
+          },
+          {
+            "id": "viewAnalytics",
+            "rotulo": "Ver análises",
+            "tipo": "ação (somente leitura)"
+          },
+          {
+            "id": "viewConfig",
+            "rotulo": "Visualizar configuração do servidor",
+            "tipo": "ação (somente leitura)",
+            "descricao": "Opções: mostrar configuração completa; mostrar comentários."
+          }
+        ]
+      }
+    ]
+  },
+  "removidas_por_serem_de_interface": {
+    "criterio": "Itens que só alteram aparência, layout, ícones/botões/menus exibidos ou idioma foram removidos; foram mantidos os que alteram comportamento, segurança, permissões, limites ou dados.",
+    "itens": [
+      "Modo escuro",
+      "Cor do tema",
+      "Tema personalizado",
+      "Idioma",
+      "Mostrar miniaturas de itens compatíveis (e tipos: imagens, vídeos, áudio, office, pastas, modelos 3D, pop-up, movimento)",
+      "Desativar miniaturas para determinadas extensões",
+      "Modo de visualização padrão / tamanho da galeria",
+      "Definir o formato exato da data",
+      "Basta um clique para abrir os arquivos",
+      "Mostrar ícone de download para acesso rápido",
+      "Mostrar seleção múltipla e caminho de cópia no menu de contexto",
+      "Mostrar botão de fechamento de prompts à direita",
+      "Ocultar certos arquivos por extensão (visual)",
+      "Barra lateral: alternâncias rápidas, sempre exibir, ocultar ações de arquivo, fixa, ocultar arquivos na árvore, mostrar ferramentas",
+      "Desativar opções de pesquisa (barra lateral)",
+      "Mostrar botão de salvamento rápido no editor",
+      "Mostrar configurações avançadas do perfil",
+      "Links da barra lateral (padrões e por usuário)",
+      "Compartilhamento: tema, cor do tema, modo claro/escuro forçado, modo de exibição, título/descrição, miniaturas, botões de navegação, cartão, barra lateral, ícone de download rápido, ocultar opção de login, ocultar extensões"
+    ]
+  }
+}

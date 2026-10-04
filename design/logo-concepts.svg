@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="840" viewBox="0 0 1600 840"><defs><filter id="grey"><feColorMatrix type="saturate" values="0"/></filter></defs><rect width="1600" height="840" fill="#f7f7f4"/><text x="60" y="78" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="40" font-weight="700" fill="#161616">Self-Drive — conceitos de marca</text><text x="60" y="116" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="20" fill="#6b6b6b">Gestor pessoal de arquivos com servidor próprio</text><rect x="60" y="150" width="474.667" height="630" rx="18" fill="#fff" stroke="#e4e4e0" stroke-width="1"/><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="90" y="190" width="414.667" height="300" preserveAspectRatio="xMidYMid meet">
+  <path fill="#111" d="M48 52h121a20 20 0 0 1 20 20v30h19a20 20 0 0 1 20 20v62a20 20 0 0 1-20 20H48a20 20 0 0 1-20-20V72a20 20 0 0 1 20-20Zm15 35v102h149v-52h-50a20 20 0 0 1-20-20V87H63Zm97 0v30h34l-34-30Z"/>
+  <path fill="#fff" d="M160 87v30h34z"/>
+  <path fill="#fff" d="M88 137h79v12H88zm0 25h57v12H88z"/>
+</svg>
+</g><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="90" y="516" width="64" height="64" preserveAspectRatio="xMidYMid meet">
+  <path fill="#111" d="M48 52h121a20 20 0 0 1 20 20v30h19a20 20 0 0 1 20 20v62a20 20 0 0 1-20 20H48a20 20 0 0 1-20-20V72a20 20 0 0 1 20-20Zm15 35v102h149v-52h-50a20 20 0 0 1-20-20V87H63Zm97 0v30h34l-34-30Z"/>
+  <path fill="#fff" d="M160 87v30h34z"/>
+  <path fill="#fff" d="M88 137h79v12H88zm0 25h57v12H88z"/>
+</svg>
+</g><text x="122" y="600" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">64px</text><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="180" y="548" width="32" height="32" preserveAspectRatio="xMidYMid meet">
+  <path fill="#111" d="M48 52h121a20 20 0 0 1 20 20v30h19a20 20 0 0 1 20 20v62a20 20 0 0 1-20 20H48a20 20 0 0 1-20-20V72a20 20 0 0 1 20-20Zm15 35v102h149v-52h-50a20 20 0 0 1-20-20V87H63Zm97 0v30h34l-34-30Z"/>
+  <path fill="#fff" d="M160 87v30h34z"/>
+  <path fill="#fff" d="M88 137h79v12H88zm0 25h57v12H88z"/>
+</svg>
+</g><text x="196" y="600" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">32px</text><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="238" y="564" width="16" height="16" preserveAspectRatio="xMidYMid meet">
+  <path fill="#111" d="M48 52h121a20 20 0 0 1 20 20v30h19a20 20 0 0 1 20 20v62a20 20 0 0 1-20 20H48a20 20 0 0 1-20-20V72a20 20 0 0 1 20-20Zm15 35v102h149v-52h-50a20 20 0 0 1-20-20V87H63Zm97 0v30h34l-34-30Z"/>
+  <path fill="#fff" d="M160 87v30h34z"/>
+  <path fill="#fff" d="M88 137h79v12H88zm0 25h57v12H88z"/>
+</svg>
+</g><text x="246" y="600" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">16px</text><text x="90.0" y="636" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#161616">A · Arquivo em movimento</text><text x="90.0" y="670" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">Uma página que avança para a próxima,</text><text x="90.0" y="696" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">simbolizando acesso direto aos arquivos.</text><rect x="562.667" y="150" width="474.667" height="630" rx="18" fill="#fff" stroke="#e4e4e0" stroke-width="1"/><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="592.667" y="190" width="414.667" height="300" preserveAspectRatio="xMidYMid meet">
+  <path fill="#111" d="M128 24 226 80v96l-98 56-98-56V80l98-56Zm0 24L52 91v74l76 43 76-43V91l-76-43Z" fill-rule="evenodd"/>
+  <path fill="#111" d="M128 68 187 102v52l-59 34-59-34v-52l59-34Zm0 25-36 20v30l36 21 36-21v-30l-36-20Z" fill-rule="evenodd"/>
+  <path fill="#111" d="M121 103h14v50h-14zM103 121h50v14h-50z"/>
+</svg>
+</g><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="592.667" y="516" width="64" height="64" preserveAspectRatio="xMidYMid meet">
+  <path fill="#111" d="M128 24 226 80v96l-98 56-98-56V80l98-56Zm0 24L52 91v74l76 43 76-43V91l-76-43Z" fill-rule="evenodd"/>
+  <path fill="#111" d="M128 68 187 102v52l-59 34-59-34v-52l59-34Zm0 25-36 20v30l36 21 36-21v-30l-36-20Z" fill-rule="evenodd"/>
+  <path fill="#111" d="M121 103h14v50h-14zM103 121h50v14h-50z"/>
+</svg>
+</g><text x="624.667" y="600" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">64px</text><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="682.667" y="548" width="32" height="32" preserveAspectRatio="xMidYMid meet">
+  <path fill="#111" d="M128 24 226 80v96l-98 56-98-56V80l98-56Zm0 24L52 91v74l76 43 76-43V91l-76-43Z" fill-rule="evenodd"/>
+  <path fill="#111" d="M128 68 187 102v52l-59 34-59-34v-52l59-34Zm0 25-36 20v30l36 21 36-21v-30l-36-20Z" fill-rule="evenodd"/>
+  <path fill="#111" d="M121 103h14v50h-14zM103 121h50v14h-50z"/>
+</svg>
+</g><text x="698.667" y="600" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">32px</text><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="740.667" y="564" width="16" height="16" preserveAspectRatio="xMidYMid meet">
+  <path fill="#111" d="M128 24 226 80v96l-98 56-98-56V80l98-56Zm0 24L52 91v74l76 43 76-43V91l-76-43Z" fill-rule="evenodd"/>
+  <path fill="#111" d="M128 68 187 102v52l-59 34-59-34v-52l59-34Zm0 25-36 20v30l36 21 36-21v-30l-36-20Z" fill-rule="evenodd"/>
+  <path fill="#111" d="M121 103h14v50h-14zM103 121h50v14h-50z"/>
+</svg>
+</g><text x="748.667" y="600" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">16px</text><text x="592.6666666666667" y="636" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#161616">B · Núcleo próprio</text><text x="592.6666666666667" y="670" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">Camadas concêntricas representam</text><text x="592.6666666666667" y="696" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">armazenamento próprio protegido por uma</text><text x="592.6666666666667" y="722" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">estrutura simples.</text><rect x="1065.33" y="150" width="474.667" height="630" rx="18" fill="#fff" stroke="#161616" stroke-width="2"/><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="1095.33" y="190" width="414.667" height="300" preserveAspectRatio="xMidYMid meet">
+  <path fill="#111" d="M48 44h160a20 20 0 0 1 20 20v128a20 20 0 0 1-20 20H48a20 20 0 0 1-20-20V64a20 20 0 0 1 20-20Zm0 18a2 2 0 0 0-2 2v128a2 2 0 0 0 2 2h160a2 2 0 0 0 2-2V64a2 2 0 0 0-2-2H48Z" fill-rule="evenodd"/>
+  <path fill="#111" d="M73 91h110v15H73zm0 30h75v15H73zm0 30h93v15H73z"/>
+  <path fill="#111" d="m167 124 18 18-18 18-11-11 7-7-7-7z"/>
+</svg>
+</g><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="1095.33" y="516" width="64" height="64" preserveAspectRatio="xMidYMid meet">
+  <path fill="#111" d="M48 44h160a20 20 0 0 1 20 20v128a20 20 0 0 1-20 20H48a20 20 0 0 1-20-20V64a20 20 0 0 1 20-20Zm0 18a2 2 0 0 0-2 2v128a2 2 0 0 0 2 2h160a2 2 0 0 0 2-2V64a2 2 0 0 0-2-2H48Z" fill-rule="evenodd"/>
+  <path fill="#111" d="M73 91h110v15H73zm0 30h75v15H73zm0 30h93v15H73z"/>
+  <path fill="#111" d="m167 124 18 18-18 18-11-11 7-7-7-7z"/>
+</svg>
+</g><text x="1127.33" y="600" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">64px</text><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="1185.33" y="548" width="32" height="32" preserveAspectRatio="xMidYMid meet">
+  <path fill="#111" d="M48 44h160a20 20 0 0 1 20 20v128a20 20 0 0 1-20 20H48a20 20 0 0 1-20-20V64a20 20 0 0 1 20-20Zm0 18a2 2 0 0 0-2 2v128a2 2 0 0 0 2 2h160a2 2 0 0 0 2-2V64a2 2 0 0 0-2-2H48Z" fill-rule="evenodd"/>
+  <path fill="#111" d="M73 91h110v15H73zm0 30h75v15H73zm0 30h93v15H73z"/>
+  <path fill="#111" d="m167 124 18 18-18 18-11-11 7-7-7-7z"/>
+</svg>
+</g><text x="1201.33" y="600" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">32px</text><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="1243.33" y="564" width="16" height="16" preserveAspectRatio="xMidYMid meet">
+  <path fill="#111" d="M48 44h160a20 20 0 0 1 20 20v128a20 20 0 0 1-20 20H48a20 20 0 0 1-20-20V64a20 20 0 0 1 20-20Zm0 18a2 2 0 0 0-2 2v128a2 2 0 0 0 2 2h160a2 2 0 0 0 2-2V64a2 2 0 0 0-2-2H48Z" fill-rule="evenodd"/>
+  <path fill="#111" d="M73 91h110v15H73zm0 30h75v15H73zm0 30h93v15H73z"/>
+  <path fill="#111" d="m167 124 18 18-18 18-11-11 7-7-7-7z"/>
+</svg>
+</g><text x="1251.33" y="600" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">16px</text><text x="1095.3333333333335" y="636" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#161616">C · Caminho pessoal</text><text x="1095.3333333333335" y="664" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#161616" letter-spacing="1.5">RECOMMENDED</text><text x="1095.3333333333335" y="698" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">Uma trilha atravessa uma biblioteca</text><text x="1095.3333333333335" y="724" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">organizada: seus arquivos, no seu caminho.</text></svg>
